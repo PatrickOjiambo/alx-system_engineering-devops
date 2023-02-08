@@ -1,3 +1,2 @@
 #!/bin/bash
-home_dir=$(cd ~ && pwd)
-cd "$home_dir"
+cd "$(cd ~ && pwd)"
