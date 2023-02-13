@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt --time-style=full-iso | awk 'NR>2 {print $NF}' | head -n 10
+ls -lt | tail -n +2 | head -n 10
