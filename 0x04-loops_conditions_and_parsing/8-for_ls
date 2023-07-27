@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Does this
 for file in *; do
     if [[ ! "$file" =~ ^\..* ]]; then
         name_after_dash="${file#*-}"
