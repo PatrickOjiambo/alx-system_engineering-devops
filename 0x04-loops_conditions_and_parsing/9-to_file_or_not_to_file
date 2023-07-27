@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Checks if file exists, is empty, and regular
-file="holbertonschool"
+# Does this
+file="this"
 if [ -e $file ]; then
 	echo "$file file exists"
 	if [ -s $file ]; then
