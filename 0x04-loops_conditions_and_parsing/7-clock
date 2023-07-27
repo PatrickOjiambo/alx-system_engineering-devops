@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-Does this
+#Does this
 x=1
 y=0
 while [ $x -lt 60 ] && [ $y -le 12 ]
