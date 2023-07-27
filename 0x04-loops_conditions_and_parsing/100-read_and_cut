@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
-
 # Define the file path
-file="/etc/passwd"
 
-# Check if the file exists
+file="/etc/passwd"
 if [ ! -f "$file" ]; then
     echo "Error: $file does not exist or is not a regular file."
     exit 1
 fi
 
-# Read the file line by line using the while loop
 while IFS= read -r line; do
-    # Print the entire line for each user
     echo "$line"
 done < "$file"
