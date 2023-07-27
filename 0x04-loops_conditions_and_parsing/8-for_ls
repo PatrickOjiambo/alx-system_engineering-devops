@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+for file in *; do
+    if [[ ! "$file" =~ ^\..* ]]; then
+        name_after_dash="${file#*-}"
+        echo "$name_after_dash"
+    fi
+done
