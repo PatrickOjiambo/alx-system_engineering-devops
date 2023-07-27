@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Change the working directory to the current directory
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+# Use chmod to add user executable permission (u+x) to all files in the current directory
+chmod u+x *
+
+# Optionally, display a message indicating the operation is complete
+echo "User executable permission (u+x) has been added to all files in the current directory."
