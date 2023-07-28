@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Bash script that displays To infinity and beyond indefinitely.
+x=1
+cleanup()
+{
+echo "I am invincible!!!"
+}
+trap cleanup SIGTERM
+while [ $x -gt 0 ]
+do
+    echo "To infinity and beyond"
+    x=$((x + 1))
+    sleep 2
+done
