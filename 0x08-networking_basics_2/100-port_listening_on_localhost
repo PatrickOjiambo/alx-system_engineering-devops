@@ -1,4 +1,16 @@
-#!/usr/bin/env bash
-# Bash script that listens on port 98 on localhost.
+#!/bin/bash
+# Check if netcat is installed
 
-nc -l localhost -p 98
+command -v nc >/dev/null 2>&1 || { echo >&2 "Netcat (nc) is required but not installed. Aborting."; exit 1; }
+
+# Define the port to listen on
+port=98
+
+# Function to handle incoming connections
+function listen_on_port() {
+    
+    nc -l -p "$port"
+}
+
+# Call the listen_on_port function
+listen_on_port
