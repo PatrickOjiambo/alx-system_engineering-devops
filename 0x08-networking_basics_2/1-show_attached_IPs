@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # Displays all active IPv4 IPs on the machine it's executed on.
 
-# Get all IP addresses associated with the machine
-ip_address=$(hostname -I)
+# Get all IP addresses assigned to the machine
+ip_addresses=$(hostname -I)
 
 # Split the IP addresses into an array
-ip_addresses=("${ip_address//" "/ }")
+read -ra ip_addresses_array <<< "$ip_addresses"
 
-# Loop through each IP address
-for ip in "${ip_addresses[@]}"; do
-    # Use grep with a regular expression to match IPv4 addresses
-    if echo "$ip" | grep -qE '^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'; then
-        printf "%s\n" "$ip"
+# Loop through the array and print only IPv4 addresses (exclude IPv6)
+for ip in "${ip_addresses_array[@]}"; do
+    # Check if the IP is IPv4 (contains ".")
+    if [[ "$ip" == *.* ]]; then
+        echo "$ip"
     fi
 done
+
