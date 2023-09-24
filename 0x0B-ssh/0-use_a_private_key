@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# uses ssh to connect to your server
+ssh-copy-id 224417-web-01@54.197.132.101
+ssh -i ~/.ssh/school 224417-web-01@54.197.132.101
