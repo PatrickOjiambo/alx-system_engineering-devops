@@ -11,6 +11,10 @@ echo "server {
     root   /etc/nginx/html;
     index  index.html;
     error 404 /error.html;
+    location = /error.html{
+        root /etc/nginx/html;
+        internal;
+    }
     location /redirect_me {
         return 301 https://google.com;
     }
