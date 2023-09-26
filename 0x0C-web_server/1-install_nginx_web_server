@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Install nginx on a server
 sudo apt-get -y update
 
