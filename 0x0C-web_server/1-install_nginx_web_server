@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # All about nginx
-apt-get -y update
-apt-get install nginx
-sh -c 'echo "Hello World!" > /var/www/html/index.html'
-sevice nginx start
+sudo apt-get -y update
+sudo apt-get install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
+sudo sevice nginx startsudo 
 
