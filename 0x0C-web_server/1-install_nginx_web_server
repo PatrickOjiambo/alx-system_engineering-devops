@@ -1,7 +1,24 @@
-#!/usr/bin/env bash
-# Script that configures a new Ubuntu machine
+#!/bin/bash
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
-sudo service nginx start
+# Update the package list to ensure we have the latest information
+apt update
+
+# Install Nginx
+apt install -y nginx
+
+# Create a default Nginx configuration file
+echo "server {
+    listen 80;
+    location / {
+        echo 'Hello World!';
+    }
+}" > /etc/nginx/sites-available/default
+
+# Test the Nginx configuration for syntax errors
+if nginx -t | grep -q "syntax is okay"; then
+    # Reload Nginx without using systemctl
+    kill -s HUP "$(cat /var/run/nginx.pid)"
+    echo "Nginx has been configured and reloaded successfully."
+else
+    echo "Nginx configuration has errors. Please check the configuration file."
+fi
