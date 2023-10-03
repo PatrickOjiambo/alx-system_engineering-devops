@@ -24,8 +24,8 @@ frontend http_front
 backend web-backend
   mode http
   balance roundrobin
-  server 204106-web-01 52.207.71.254 check
-  server 204106-web-02 54.234.56.248 check
+  server 224417-web-01 100.26.246.25 check
+  server 224417-web-02 100.25.23.198 check
 EOF
 
 # Enable HAProxy without prompting
