@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Make sure curl 0:80 returns
+sudo apt update
+sudo apt install nginx -y
+sudo service nginx start
