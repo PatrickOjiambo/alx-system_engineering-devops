@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#Make sure curl 0:80 returns
-#nginx file
-sudo apt update
-sudo apt install nginx -y
-sudo service nginx start
+# what’s keeping your Ubuntu container’s Nginx installation from listening on port 8?
+# configures nginx to run and listen to port 80
+
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
