@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Whoami the user
+whoami "$1"
