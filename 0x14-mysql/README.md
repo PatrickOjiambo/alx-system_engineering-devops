@@ -1,0 +1,2 @@
+MYSQL - Master Slave approach.
+ 
