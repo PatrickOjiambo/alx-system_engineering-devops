@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Total number of subscribers"""
 from requests import get
+
+
 def number_of_subscribers(subreddit):
     """Total number of subs
     Args:
@@ -17,5 +19,3 @@ def number_of_subscribers(subreddit):
 
     except Exception:
         return 0
-    
-
